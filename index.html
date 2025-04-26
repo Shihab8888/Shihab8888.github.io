@@ -99,6 +99,50 @@
             color: var(--text);
         }
 
+        /* Mobile navigation styles */
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            flex-direction: column;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            border-top: 1px solid var(--border);
+            animation: slideDown 0.3s ease;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: var(--text);
+            padding: 0.8rem 1rem;
+            font-weight: 500;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav a:hover {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Animated Background Elements */
         .hero::before,
         .hero::after {
@@ -606,6 +650,38 @@
             .work-container {
                 grid-template-columns: 1fr;
             }
+            
+            .footer-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .work-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .name-background {
+                font-size: 2.5rem;
+            }
+            
+            .profile-pic {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .profile-container {
+                height: 180px;
+            }
         }
     </style>
 </head>
@@ -623,6 +699,14 @@
         <button class="menu-btn">
             <ion-icon name="menu"></ion-icon>
         </button>
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -646,12 +730,12 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Hi, I’m A Mahammad Ismail a passionate Content Creator, Digital Marketer, and Media Professional with a strong focus on visual storytelling and brand strategy.
+                <p>Hi, I'm A Mahammad Ismail a passionate Content Creator, Digital Marketer, and Media Professional with a strong focus on visual storytelling and brand strategy.
                     
                     I specialize in video editing, content creation, and social media management, helping brands and creators bring their ideas to life and connect with their audience in meaningful ways. With a blend of creativity and strategy, I craft content that not only looks great but also performs whether it's driving engagement, growing a community, or boosting brand visibility.
                     
 
-                    From developing content strategies to editing videos that tell a story, I’m all about creating digital experiences that leave a lasting impact. Whether you’re a brand, business, or individual looking to elevate your online presence, I’m here to help make that happen.</p>
+                    From developing content strategies to editing videos that tell a story, I'm all about creating digital experiences that leave a lasting impact. Whether you're a brand, business, or individual looking to elevate your online presence, I'm here to help make that happen.</p>
             </div>
             <div class="about-stats">
                 <div class="stat-item">
@@ -666,10 +750,6 @@
                     <div class="stat-number">30+</div>
                     <div class="stat-title">Happy Clients</div>
                 </div>
-                <!-- <div class="stat-item">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-title">Awards Won</div> -->
-                </div>
             </div>
         </div>
     </section>
@@ -679,7 +759,6 @@
         <h2 class="section-title">My Work</h2>
         <div class="work-container">
            
-
             <div class="work-card">
                 <img src="picture_perfect.JPG" alt="picture_perfect" class="work-image">
                 <div class="work-info">
@@ -696,7 +775,7 @@
             </div>
             
             <div class="work-card">
-                <img src="https://yt3.googleusercontent.com/LX89Bq8aLdXoP_jhFT5-M62aG_oyJ60v45ODKDc9aAZfjdXgwK0ohes_rMUIHMuj_XlgtXG7=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" alt="Project 1" class="work-image">
+                <img src="https://yt3.googleusercontent.com/Nv93Y2NkJoW9Hcpuf5SLfEC-z4bkLrpjtgMD1fgALFR3YXlnfqHPRqOzTRKRIeAPIqVOqBNwqZk=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" alt="Project 1" class="work-image">
                 <div class="work-info">
                     <h3 class="work-title">Youtube Content Creation</h3>
                     <p class="work-category">Content Creation</p>
@@ -713,25 +792,13 @@
                 <div class="work-info">
                     <h3 class="work-title">Creative Head @ Prathidina News</h3>
                     <p class="work-category">Press & Social Media</p>
-                    <p class="work-description">As Creative Head at Prathidina News, I lead the visual direction and content strategy across platforms. I oversee the creation of engaging multimedia, ensuring each story is impactful and audience-focused. My role blends creativity with journalism to elevate the brand’s voice and presence.</p>
+                    <p class="work-description">As Creative Head at Prathidina News, I lead the visual direction and content strategy across platforms. I oversee the creation of engaging multimedia, ensuring each story is impactful and audience-focused. My role blends creativity with journalism to elevate the brand's voice and presence.</p>
                     <a href="https://www.youtube.com/channel/UC95_eSBEaobAt5MkjlCUVWQ" class="work-link">
                         View Youtube Channel
                         <ion-icon name="arrow-forward" style="margin-left: 0.5rem;"></ion-icon>
                     </a>
                 </div>
             </div>
-            <!-- <div class="work-card">
-                <img src="/api/placeholder/400/200" alt="Project 4" class="work-image">
-                <div class="work-info">
-                    <h3 class="work-title">Startup Launch</h3>
-                    <p class="work-category">Social Media Marketing</p>
-                    <p class="work-description">Created and executed social media launch strategy for tech startup that generated 50K+ followers in first month and secured media coverage in top industry publications.</p>
-                    <a href="#" class="work-link">
-                        View Case Study
-                        <ion-icon name="arrow-forward" style="margin-left: 0.5rem;"></ion-icon>
-                    </a>
-                </div>
-            </div> -->
         </div>
     </section>
 
@@ -823,18 +890,12 @@
             </div>
             <div class="contact-form">
                 <form action="mailto:contact.shihabportfolio@gmail.com" method="post">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Your Name</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
+                    
                     <div class="form-group">
                         <label for="email" class="form-label">Your Email</label>
                         <input type="email" id="email" class="form-control" required>
                     </div>
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" class="form-control" required>
-                    </div>
+                    
                     <div class="form-group">
                         <label for="message" class="form-label">Message</label>
                         <textarea id="message" class="form-control" required></textarea>
@@ -849,7 +910,7 @@
     <footer class="footer">
         <div class="footer-nav">
             <a href="#">Home</a>
-            <a href="#about">About</a>
+            <a href="#about">About</a> 
             <a href="#work">Work</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
@@ -879,17 +940,51 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+                
+                // Close mobile menu if open when clicking a link
+                if (mobileNav.style.display === 'flex') {
+                    mobileNav.style.display = 'none';
+                    menuBtn.innerHTML = '<ion-icon name="menu"></ion-icon>';
+                    isMenuOpen = false;
+                }
             });
         });
 
-        // Mobile menu toggle
+        // Improved Mobile menu toggle
         const menuBtn = document.querySelector('.menu-btn');
-        const navLinks = document.querySelector('.nav-links');
+        const mobileNav = document.querySelector('.mobile-nav');
+        let isMenuOpen = false;
         
         menuBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if (!isMenuOpen) {
+                mobileNav.style.display = 'flex';
+                menuBtn.innerHTML = '<ion-icon name="close"></ion-icon>';
+                isMenuOpen = true;
+            } else {
+                mobileNav.style.display = 'none';
+                menuBtn.innerHTML = '<ion-icon name="menu"></ion-icon>';
+                isMenuOpen = false;
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (isMenuOpen && !e.target.closest('.navbar')) {
+                mobileNav.style.display = 'none';
+                menuBtn.innerHTML = '<ion-icon name="menu"></ion-icon>';
+                isMenuOpen = false;
+            }
+        });
+        
+        // Prevent the menu close when clicking inside the menu
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        
+        mobileNav.addEventListener('click', (e) => {
+            e.stopPropagation();
         });
     </script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
-</html>
+</html>                                
